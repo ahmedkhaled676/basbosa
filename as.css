@@ -38,70 +38,93 @@ header nav ul li a:hover {
     color: #f39c12;
 }
 
-/* تصميم التخطيط بين الصورة والنصوص */
-.content {
+/* 🔹 تصميم الحاوية التي تحتوي على النصوص والصورة */
+.container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    max-width: 1000px;
     margin: 2em auto;
     padding: 0 20px;
-    max-width: 1000px;
 }
 
-/* ضبط النص الأول ليكون بجانب الصورة من الأعلى */
-.text-1 {
+/* 🔹 تقسيم النصوص والصورة */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* 🔹 الحاوية الرئيسية للصورة والنصوص */
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+
+/* 🔹 النص الأول في الأعلى على اليمين */
+p {
     flex: 1;
     text-align: right;
-    font-size: 1.8em;
+    font-size: 1.5em;
     color: rgb(135, 143, 91);
     max-width: 40%;
+    align-self: flex-start;
 }
 
-/* ضبط النص الثاني ليكون بجانب الصورة من الأسفل */
-.text-2 {
+/* 🔹 النص الثاني في الأسفل على اليسار */
+p.s {
     flex: 1;
     text-align: left;
-    font-size: 1.8em;
+    font-size: 1.5em;
     color: rgb(175, 63, 134);
     max-width: 40%;
+    align-self: flex-end;
 }
 
-/* ضبط الصورة */
+/* 🔹 ضبط الصورة */
 .image-container {
     flex: 1;
-    max-width: 50%;
+    max-width: 30%;
     display: flex;
     justify-content: center;
 }
 
 .image-container img {
     width: 100%;
-    max-width: 500px;
+    max-width: 300px; /* تصغير الصورة */
     height: auto;
     object-fit: contain;
 }
 
-/* 🔹 تحسين التخطيط على الشاشات الصغيرة */
+/* 🔹 تحسين التخطيط على الهواتف */
 @media (max-width: 768px) {
-    .content {
+    .wrapper {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
-    .text-1, .text-2 {
+    p, p.s {
         max-width: 90%;
         text-align: center;
-        font-size: 1.5em;
+        font-size: 1.3em;
+    }
+
+    p.s {
+        align-self: center;
     }
 
     .image-container {
-        max-width: 90%;
+        max-width: 50%;
     }
 
     .image-container img {
-        max-width: 100%;
+        max-width: 250px;
     }
 }
