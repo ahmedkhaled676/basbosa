@@ -6,7 +6,7 @@ body {
     background-position: center;
 }
 
-/* تنسيق الهيدر */
+/* 🔹 تنسيق الهيدر */
 header {
     background: rgba(0, 0, 0, 0.7);
     padding: 1em 0;
@@ -38,7 +38,7 @@ header nav ul li a:hover {
     color: #f39c12;
 }
 
-/* 🔹 تصميم الحاوية التي تحتوي على النصوص والصورة */
+/* 🔹 الحاوية الرئيسية */
 .container {
     display: flex;
     flex-direction: column;
@@ -49,60 +49,49 @@ header nav ul li a:hover {
     padding: 0 20px;
 }
 
-/* 🔹 تقسيم النصوص والصورة */
-.content {
+/* 🔹 الحاوية التي تضم النصوص والصورة */
+.wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 15px;
     width: 100%;
 }
 
-/* 🔹 الحاوية الرئيسية للصورة والنصوص */
-.wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    gap: 20px;
-}
-
-/* 🔹 النص الأول في الأعلى على اليمين */
+/* 🔹 ضبط النص الأول ليكون في الأعلى على اليمين */
 p {
-    flex: 1;
-    text-align: right;
-    font-size: 1.5em;
+    font-size: 1.2em; /* ✅ تصغير حجم النص */
     color: rgb(135, 143, 91);
+    text-align: right;
     max-width: 40%;
     align-self: flex-start;
 }
 
-/* 🔹 النص الثاني في الأسفل على اليسار */
+/* 🔹 ضبط النص الثاني ليكون في الأسفل على اليسار */
 p.s {
-    flex: 1;
-    text-align: left;
-    font-size: 1.5em;
+    font-size: 1.2em; /* ✅ تصغير حجم النص */
     color: rgb(175, 63, 134);
+    text-align: left;
     max-width: 40%;
     align-self: flex-end;
 }
 
-/* 🔹 ضبط الصورة */
+/* 🔹 ضبط الصورة لتكون في المنتصف وتكبيرها */
 .image-container {
-    flex: 1;
-    max-width: 30%;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .image-container img {
     width: 100%;
-    max-width: 300px; /* تصغير الصورة */
+    max-width: 450px; /* ✅ تكبير الصورة */
     height: auto;
     object-fit: contain;
 }
 
-/* 🔹 تحسين التخطيط على الهواتف */
+/* 🔹 تحسين التخطيط على الشاشات الصغيرة */
 @media (max-width: 768px) {
     .wrapper {
         flex-direction: column;
@@ -113,7 +102,7 @@ p.s {
     p, p.s {
         max-width: 90%;
         text-align: center;
-        font-size: 1.3em;
+        font-size: 1em; /* ✅ تصغير النص أكثر على الهواتف */
     }
 
     p.s {
@@ -121,10 +110,10 @@ p.s {
     }
 
     .image-container {
-        max-width: 50%;
+        max-width: 90%;
     }
 
     .image-container img {
-        max-width: 250px;
+        max-width: 350px; /* ✅ تقليل حجم الصورة قليلًا على الهواتف */
     }
 }
