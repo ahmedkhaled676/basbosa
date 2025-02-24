@@ -6,7 +6,7 @@ body {
     background-position: center;
 }
 
-/* 🔹 تنسيق الهيدر */
+/* تنسيق الهيدر */
 header {
     background: rgba(0, 0, 0, 0.7);
     padding: 1em 0;
@@ -38,82 +38,103 @@ header nav ul li a:hover {
     color: #f39c12;
 }
 
-/* 🔹 الحاوية الرئيسية */
-.container {
+/* معرض الصور */
+.gallery {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
-    max-width: 1000px;
-    margin: 2em auto;
-    padding: 0 20px;
+    margin: 2em 0;
+    padding: 0 10px;
 }
 
-/* 🔹 الحاوية التي تضم النصوص والصورة */
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    width: 100%;
-}
-
-/* 🔹 ضبط النص الأول ليكون في الأعلى على اليمين */
-p {
-    font-size: 1.2em; /* ✅ تصغير حجم النص */
-    color: rgb(135, 143, 91);
-    text-align: right;
-    max-width: 40%;
-    align-self: flex-start;
-}
-
-/* 🔹 ضبط النص الثاني ليكون في الأسفل على اليسار */
-p.s {
-    font-size: 1.2em; /* ✅ تصغير حجم النص */
-    color: rgb(175, 63, 134);
-    text-align: left;
-    max-width: 40%;
-    align-self: flex-end;
-}
-
-/* 🔹 ضبط الصورة لتكون في المنتصف وتكبيرها */
 .image-container {
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
+}
+
+/* ضبط الصورة لتكون متجاوبة */
+.image-container a {
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
     width: 100%;
+    max-width: 600px;
+}
+
+.image-container a:hover {
+    transform: scale(1.05);
 }
 
 .image-container img {
+    display: block;
     width: 100%;
-    max-width: 450px; /* ✅ تكبير الصورة */
     height: auto;
+    max-height: 500px;
     object-fit: contain;
 }
 
-/* 🔹 تحسين التخطيط على الشاشات الصغيرة */
+/* تحسين النصوص */
+p {
+    color: rgb(135, 143, 91);
+    font-size: 1.2em;
+    text-align: right;
+    margin: 10px;
+}
+
+p.s {
+    color: rgb(175, 63, 134);
+}
+
+.s {
+    text-align: justify;
+    margin: 0 20px;
+}
+
+/* 🔹 تحسين التجاوب على الهواتف */
 @media (max-width: 768px) {
-    .wrapper {
+    header nav ul {
         flex-direction: column;
-        align-items: center;
         text-align: center;
     }
 
-    p, p.s {
-        max-width: 90%;
-        text-align: center;
-        font-size: 1em; /* ✅ تصغير النص أكثر على الهواتف */
+    header nav ul li {
+        margin: 10px 0;
     }
 
-    p.s {
-        align-self: center;
+    .gallery {
+        margin: 1em 0;
+        padding: 0;
     }
 
     .image-container {
-        max-width: 90%;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .image-container a {
+        max-width: 95%;
     }
 
     .image-container img {
-        max-width: 350px; /* ✅ تقليل حجم الصورة قليلًا على الهواتف */
+        max-width: 100%;
+        max-height: 400px;
+        object-fit: cover;
     }
-}
+
+    p {
+        font-size: 1.0em;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .s {
+        text-align: center;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+}  
