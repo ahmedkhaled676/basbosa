@@ -81,6 +81,9 @@ p.s{
         flex-direction: column;
         align-items: center;
     }
+    .image-container img {
+        width: 330px;
+    }
 
     .box {
         width: 90%;
