@@ -75,3 +75,13 @@ right: 280px;}
 p.s{
     color: rgb(175, 63, 134);
 }
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        width: 90%;
+    }
+}
