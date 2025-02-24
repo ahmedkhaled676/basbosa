@@ -3,9 +3,9 @@ body {
     font-family: Arial, sans-serif;
     background: url('2.jpg') no-repeat center center fixed;
     background-size: cover;
-    flex-wrap: wrap;
 }
 
+/* تنسيق الهيدر ليكون متجاوبًا */
 header {
     background: rgba(0, 0, 0, 0.7);
     padding: 1em 0;
@@ -17,11 +17,12 @@ header nav ul {
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
 header nav ul li {
-    margin: 0 15px;
+    margin: 5px;
 }
 
 header nav ul li a {
@@ -35,6 +36,7 @@ header nav ul li a:hover {
     color: #f39c12;
 }
 
+/* تنسيق معرض الصور */
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -44,7 +46,9 @@ header nav ul li a:hover {
 
 .image-container {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
 }
 
 .image-container a {
@@ -56,36 +60,69 @@ header nav ul li a:hover {
 }
 
 .image-container a:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
+/* تصغير حجم الصور على الشاشات الصغيرة */
 .image-container img {
     display: block;
-    width: 600px;
-    height: 500px;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
     object-fit: cover;
 }
-p{
+
+/* ضبط النصوص */
+p {
     color: rgb(135, 143, 91);
-    font-size: xx-large;
+    font-size: 1.5em;
     text-align: right;
 }
-.s{ text-align:justify;
 
-right: 280px;}
-p.s{
+p.s {
     color: rgb(175, 63, 134);
 }
+
+.s {
+    text-align: justify;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+/* 🔹 تحسين التجاوب على الهواتف */
 @media (max-width: 768px) {
-    .container {
+    header nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    .gallery {
+        margin: 1em 0;
+    }
+
+    .image-container {
         flex-direction: column;
         align-items: center;
     }
+
     .image-container img {
-        width: 100px;
+        max-width: 90%;
+        height: auto;
     }
 
-    .box {
-        width: 90%;
+    p {
+        font-size: 1.2em;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .s {
+        text-align: center;
+        margin: 0 auto;
+        padding: 0 15px;
     }
 }
